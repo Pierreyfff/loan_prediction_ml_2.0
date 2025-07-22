@@ -1,0 +1,45 @@
+{
+  "name": "loan-prediction-ml-2.0",
+  "version": "2.0.0",
+  "description": "Sistema ML de Predicción de Préstamos con plazos inteligentes y validación en tiempo real",
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "install:all": "npm install && cd backend && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pierreyfff/loan_prediction_ml_2.0.git"
+  },
+  "keywords": [
+    "machine-learning",
+    "loan-prediction",
+    "react",
+    "nodejs",
+    "postgresql",
+    "logistic-regression",
+    "fintech"
+  ],
+  "author": "Pierreyfff",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.1",
+    "lucide-react": "^0.445.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
