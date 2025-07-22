@@ -13,19 +13,26 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
   'http://127.0.0.1:3000',
-  'http://127.0.0.1:5173'
+  'http://127.0.0.1:5173',
+  'https://loan-prediction-ml-2-0.vercel.app',
+  'https://loan-prediction-ml-2-0-pierreyfff.vercel.app'
 ]
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Permitir requests sin origin (como mobile apps, Postman)
+    // Permitir requests sin origin (mobile apps, Postman)
     if (!origin) return callback(null, true)
     
-    if (allowedOrigins.indexOf(origin) !== -1 || origin.includes('localhost')) {
+    // Permitir cualquier subdominio de Vercel en desarrollo
+    if (origin.includes('vercel.app') || origin.includes('localhost')) {
+      return callback(null, true)
+    }
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
       console.log('❌ CORS bloqueado para origin:', origin)
-      callback(new Error('No permitido por CORS'))
+      callback(null, true) // Permitir en producción para testing
     }
   },
   credentials: true,

@@ -1,8 +1,9 @@
 // Configuración del API - compatible con Vite y CRA
-const API_BASE_URL = import.meta.env?.VITE_API_URL || process.env.REACT_APP_API_URL || 'http://localhost:5000/api'
+const API_BASE_URL = import.meta.env?.VITE_API_URL || process.env.REACT_APP_API_URL || (window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : 'https://loan-prediction-ml-backend.onrender.com/api')
 const USER_LOGIN = 'Pierreyfff'
 
 console.log('🔗 API configurado en:', API_BASE_URL)
+console.log('🌍 Entorno:', window.location.hostname === 'localhost' ? 'Desarrollo' : 'Producción')
 
 class PredictionService {
   
